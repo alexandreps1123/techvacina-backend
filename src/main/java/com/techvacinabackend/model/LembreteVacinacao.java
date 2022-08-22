@@ -16,11 +16,9 @@ public class LembreteVacinacao {
     private long id;
 
     @ManyToOne
-    @Column(nullable = false)
     private Cliente cliente;
 
     @OneToOne
-    @Column
     private VacinacaoPendente vacinacaoPendente;
 
     @Column

@@ -24,7 +24,6 @@ public class Vacina {
     private long intervalo;
     
     @ManyToOne
-    @Column(nullable = false)
     private Doenca doenca;
 
 }
