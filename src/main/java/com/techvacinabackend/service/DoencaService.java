@@ -19,4 +19,12 @@ public class DoencaService {
 		return doencaRepository.findAll();
 	}
 
+	public Doenca salvar(Doenca doenca) {
+		return doencaRepository.save(doenca);
+	}
+
+	public Doenca acharPorNome(String doencaNome) {
+		return doencaRepository.findByNome(doencaNome);
+	}
+
 }

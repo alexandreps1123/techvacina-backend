@@ -19,4 +19,18 @@ public class VacinacaoPendenteService {
 		return vacinacaoPendenteRepository.findAll();
 	}
 
+	public VacinacaoPendente salvar(VacinacaoPendente vacinacao) {
+		return vacinacaoPendenteRepository.save(vacinacao);
+	}
+
+	public VacinacaoPendente acharPorClienteIdEDoencaEVacina(Long clienteId, String doencaNome, String vacinaNome) {
+		return vacinacaoPendenteRepository
+		.findByCliente_IdAndDoenca_NomeAndVacina_Nome(
+			clienteId, doencaNome, vacinaNome
+		);
+	}
+
+	public void apagar(VacinacaoPendente vacinacaoPendente) {
+		vacinacaoPendenteRepository.delete(vacinacaoPendente);
+	}
 }

@@ -27,4 +27,9 @@ public class DoencaController {
 	public ResponseEntity<List<Doenca>> listarTodos() {
 		return new ResponseEntity<>(doencaService.listarTodos(), HttpStatus.OK);
 	}
+
+	@PostMapping()
+	public ResponseEntity<Doenca> salvar(@RequestBody Doenca doenca) {
+		return new ResponseEntity<>(doencaService.salvar(doenca), HttpStatus.CREATED);
+	}
 }

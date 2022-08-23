@@ -19,4 +19,8 @@ public class VacinacaoFeitaService {
 		return vacinacaoFeitaRepository.findAll();
 	}
 
+	public VacinacaoFeita salvar(VacinacaoFeita vacinacao) {
+		return vacinacaoFeitaRepository.save(vacinacao);
+	}
+
 }

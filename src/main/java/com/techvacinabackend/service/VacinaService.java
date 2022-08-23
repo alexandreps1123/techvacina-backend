@@ -19,4 +19,12 @@ public class VacinaService {
 		return vacinaRepository.findAll();
 	}
 
+	public Vacina salvar(Vacina vacina) {
+		return vacinaRepository.save(vacina);
+	}
+
+	public Vacina acharPorNome(String vacinaNome) {
+		return vacinaRepository.findByNome(vacinaNome);
+	}
+
 }

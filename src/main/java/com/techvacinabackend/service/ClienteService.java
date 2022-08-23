@@ -23,4 +23,8 @@ public class ClienteService {
 	public Cliente salvar(Cliente cliente) {
 		return clienteRepository.save(cliente);
 	}
+
+	public Cliente acharPorId(Long clienteId) {
+		return clienteRepository.findById(clienteId).get();
+	}
 }

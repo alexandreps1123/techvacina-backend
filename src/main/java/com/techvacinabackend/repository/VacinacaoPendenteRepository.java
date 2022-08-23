@@ -7,5 +7,5 @@ import com.techvacinabackend.model.VacinacaoPendente;
 
 @Repository
 public interface VacinacaoPendenteRepository extends JpaRepository<VacinacaoPendente, Long> {
-    
+    VacinacaoPendente findByCliente_IdAndDoenca_NomeAndVacina_Nome(Long clienteId, String doencaNome, String vacinaNome);
 }

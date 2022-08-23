@@ -18,10 +18,14 @@ public class LembreteVacinacao {
     @ManyToOne
     private Cliente cliente;
 
-    @OneToOne
-    private VacinacaoPendente vacinacaoPendente;
+    // @OneToOne
+    // private VacinacaoPendente vacinacaoPendente;
 
     @Column
     private java.time.LocalDate data;
+
+    public LembreteVacinacao() {
+        super();
+    }
     
 }

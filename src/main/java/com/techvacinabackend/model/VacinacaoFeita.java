@@ -7,27 +7,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 public class VacinacaoFeita {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Getter private Long id;
 
     @ManyToOne
-    private Vacina vacina;
+    @Getter @Setter private Vacina vacina;
 
     @Column
-    private int dose;
+    @Getter @Setter private int dose;
 
     @ManyToOne
-    private Cliente cliente;
+    @Getter @Setter private Cliente cliente;
 
     @ManyToOne
-    private Doenca doenca;
+    @Getter @Setter private Doenca doenca;
 
-    @Column
-    private java.time.LocalDate data;
+    @Column(nullable = false)
+    @Getter @Setter private java.time.LocalDate data;
 
+    public VacinacaoFeita() {
+        super();
+    }
     
 }

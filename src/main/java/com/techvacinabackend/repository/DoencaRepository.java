@@ -7,5 +7,5 @@ import com.techvacinabackend.model.Doenca;
 
 @Repository
 public interface DoencaRepository extends JpaRepository<Doenca, Long> {
-    
+    Doenca findByNome(String doencaNome);
 }
