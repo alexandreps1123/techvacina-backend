@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.techvacinabackend.model.Cliente;
 import com.techvacinabackend.service.ClienteService;
@@ -23,10 +24,16 @@ public class ClienteController {
 		this.clienteService = clienteService;
 	}
 	
-	@GetMapping()
+	@GetMapping("all")
 	public ResponseEntity<List<Cliente>> listarTodos() {
 		return new ResponseEntity<>(clienteService.listarTodos(), HttpStatus.OK);
 	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Cliente> retornarCliente(@PathVariable long id) {
+		return new ResponseEntity<>(clienteService.acharPorId(id), HttpStatus.OK);
+	}
+
 	@PostMapping()
 	public ResponseEntity<Cliente> salvar(@RequestBody Cliente cliente) {
 		return new ResponseEntity<>(clienteService.salvar(cliente), HttpStatus.CREATED);
