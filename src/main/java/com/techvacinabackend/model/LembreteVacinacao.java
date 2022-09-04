@@ -6,23 +6,28 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "cliente_id", "doenca_id" }) })
 public class LembreteVacinacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @Getter private long id;
 
     @ManyToOne
-    private Cliente cliente;
+    @Getter @Setter private Cliente cliente;
 
-    // @OneToOne
-    // private VacinacaoPendente vacinacaoPendente;
+    @ManyToOne
+    @Getter @Setter private Doenca doenca;
 
     @Column
-    private java.time.LocalDate data;
+    @Getter @Setter private java.time.LocalDate data;
 
     public LembreteVacinacao() {
         super();

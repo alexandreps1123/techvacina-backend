@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,9 +24,14 @@ public class DoencaController {
 		this.doencaService = doencaService;
 	}
 	
-	@GetMapping()
+	@GetMapping("all")
 	public ResponseEntity<List<Doenca>> listarTodos() {
 		return new ResponseEntity<>(doencaService.listarTodos(), HttpStatus.OK);
+	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Doenca> retornarDoenca(@PathVariable long id) {
+		return new ResponseEntity<>(doencaService.acharPorId(id), HttpStatus.OK);
 	}
 
 	@PostMapping()

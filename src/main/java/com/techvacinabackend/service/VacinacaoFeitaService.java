@@ -19,6 +19,14 @@ public class VacinacaoFeitaService {
 		return vacinacaoFeitaRepository.findAll();
 	}
 
+	public VacinacaoFeita acharPorId(long id) {
+		return vacinacaoFeitaRepository.findById(id).get();
+	}
+
+	public List<VacinacaoFeita> acharPorCliente(long id) {
+		return vacinacaoFeitaRepository.findByCliente_Id(id);
+	}
+
 	public VacinacaoFeita salvar(VacinacaoFeita vacinacao) {
 		return vacinacaoFeitaRepository.save(vacinacao);
 	}

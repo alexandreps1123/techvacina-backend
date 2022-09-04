@@ -5,21 +5,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-public class Doenca {
+public class PostoDeSaude {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     @Getter @Setter private String nome;
 
-    public Doenca() {
-		super();
-	}
+    @OneToOne
+    @Getter @Setter private Endereco endereco;
+
+    public PostoDeSaude() {
+        super();
+    }
+    
 }

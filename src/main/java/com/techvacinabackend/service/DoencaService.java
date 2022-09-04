@@ -14,6 +14,10 @@ public class DoencaService {
 		super();
 		this.doencaRepository = doencaRepository;
 	}
+
+	public Doenca acharPorId(long id) {
+		return doencaRepository.findById(id).get();
+	}
 	
 	public List<Doenca> listarTodos() {
 		return doencaRepository.findAll();

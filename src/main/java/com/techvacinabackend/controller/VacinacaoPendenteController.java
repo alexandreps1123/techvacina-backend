@@ -1,6 +1,5 @@
 package com.techvacinabackend.controller;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +41,7 @@ public class VacinacaoPendenteController {
 		this.vacinacaoPendenteService = vacinacaoPendenteService;
 	}
 	
-	@GetMapping()
+	@GetMapping("all")
 	public ResponseEntity<List<VacinacaoPendente>> listarTodos() {
 		return new ResponseEntity<>(vacinacaoPendenteService.listarTodos(), HttpStatus.OK);
 	}

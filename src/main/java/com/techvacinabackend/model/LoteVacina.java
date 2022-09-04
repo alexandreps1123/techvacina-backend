@@ -11,8 +11,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-public class VacinacaoFeita {
-    
+public class LoteVacina {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter private Long id;
@@ -20,26 +20,19 @@ public class VacinacaoFeita {
     @ManyToOne(optional = false)
     @Getter @Setter private Vacina vacina;
 
+    @Column (nullable = false)
+    @Getter @Setter private long quantidade;
+
+    @Column (nullable = false)
+    @Getter @Setter private java.time.LocalDate recebimento;
+
+    @Column (nullable = false)
+    @Getter @Setter private java.time.LocalDate validade;
+
     @ManyToOne (optional = false)
-    @Getter @Setter private LoteVacina lote;
-
-    @Column
-    @Getter @Setter private int dose;
-
-    @ManyToOne (optional = false)
-    @Getter @Setter private Cliente cliente;
-
-    @ManyToOne (optional = false)
-    @Getter @Setter private Doenca doenca;
-
-    @Column(nullable = false)
-    @Getter @Setter private java.time.LocalDate data;
-
-    @ManyToOne(optional = false)
     @Getter @Setter private PostoDeSaude posto;
 
-    public VacinacaoFeita() {
+    public LoteVacina() {
         super();
     }
-    
 }

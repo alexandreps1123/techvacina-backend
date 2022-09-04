@@ -19,4 +19,22 @@ public class LembreteVacinacaoService {
 		return lembreteVacinacaoRepository.findAll();
 	}
 
+	public LembreteVacinacao acharPorId(long id) {
+		return lembreteVacinacaoRepository.findById(id).get();
+	}
+
+	public LembreteVacinacao acharPorClienteENomeDoenca(long clienteId, long doencaId) {
+		return lembreteVacinacaoRepository.findByCliente_IdAndDoenca_Id(clienteId, doencaId);
+	}
+
+	public LembreteVacinacao salvar(LembreteVacinacao lembrete) {
+		return lembreteVacinacaoRepository.save(lembrete);
+	}
+
+	public void deletar(LembreteVacinacao lembrete) {
+		lembreteVacinacaoRepository.deleteById(lembrete.getId());
+	}
+
+
+
 }

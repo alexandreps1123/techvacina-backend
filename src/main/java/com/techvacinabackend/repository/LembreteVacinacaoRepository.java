@@ -7,5 +7,5 @@ import com.techvacinabackend.model.LembreteVacinacao;
 
 @Repository
 public interface LembreteVacinacaoRepository extends JpaRepository<LembreteVacinacao, Long> {
-    
+    LembreteVacinacao findByCliente_IdAndDoenca_Id(Long clienteId, long doencaId);
 }

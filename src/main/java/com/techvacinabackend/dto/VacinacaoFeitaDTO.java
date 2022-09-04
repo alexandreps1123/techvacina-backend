@@ -11,4 +11,8 @@ public class VacinacaoFeitaDTO {
     public int dose;
 
     public String data;
+
+    public Long loteId;
+
+    public Long postoId;
 }
