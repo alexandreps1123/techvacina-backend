@@ -55,6 +55,9 @@ VALUES (1, 'Pfizer', 1, 0, 180, 1);
 -- Moderna
 INSERT INTO vacina (id, nome, doses, intervalo_entre_doses, tempo_de_eficacia, doenca_id)
 VALUES (2, 'Moderna', 1, 0, 365, 1);
+-- Anti-Hep
+INSERT INTO vacina (id, nome, doses, intervalo_entre_doses, tempo_de_eficacia, doenca_id)
+VALUES (3, 'Anti-Hep', 1, 0, 365, 3);
 
 -- Lote
 -- Lote Pfizer
@@ -63,3 +66,19 @@ VALUES (1, 1, 1000, '2022-07-01', '2023-07-01', 1);
 -- Lote Moderna
 INSERT INTO lote_vacina (id, vacina_id, quantidade, recebimento, validade, posto_id)
 VALUES (2, 2, 1000, '2022-07-15', '2022-12-01', 1);
+-- Lote Anti-Hep
+INSERT INTO lote_vacina (id, vacina_id, quantidade, recebimento, validade, posto_id)
+VALUES (3, 3, 1000, '2022-05-15', '2023-02-01', 1);
+
+-- Vacinação Feita
+INSERT INTO vacinacao_feita (id, cliente_id, vacina_id, doenca_id, dose, lote_id, posto_id, data)
+VALUES (1, 1, 1, 1, 1, 1, 1, '2022-09-01');
+INSERT INTO vacinacao_feita (id, cliente_id, vacina_id, doenca_id, dose, lote_id, posto_id, data)
+VALUES (2, 1, 3, 3, 1, 3, 1, '2022-09-03');
+
+-- Vacinação Mais Recente
+-- Cliente 1
+INSERT INTO vacinacao_mais_recente (id, cliente_id, doenca_id, vacinacao_id, data_prevista_proxima)
+VALUES (1, 1, 1, 1, '2023-06-01');
+INSERT INTO vacinacao_mais_recente (id, cliente_id, doenca_id, vacinacao_id, data_prevista_proxima)
+VALUES (2, 1, 3, 2, '2023-09-03');

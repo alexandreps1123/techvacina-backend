@@ -31,6 +31,10 @@ public class VacinacaoMaisRecenteService {
 		return vacinacaoMaisRecenteRepository.findByCliente_IdAndDoenca_Nome(id, doencaNome);
 	}
 
+	public VacinacaoMaisRecente acharPorClienteEDoencaId(long id, Long doencaId) {
+		return vacinacaoMaisRecenteRepository.findByCliente_IdAndDoenca_Id(id, doencaId);
+	}
+
 	public VacinacaoMaisRecente salvar(VacinacaoMaisRecente vacinacao) {
 		return vacinacaoMaisRecenteRepository.save(vacinacao);
 	}

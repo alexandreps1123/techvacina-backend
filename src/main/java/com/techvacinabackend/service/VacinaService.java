@@ -19,6 +19,10 @@ public class VacinaService {
 		return vacinaRepository.findAll();
 	}
 
+	public Vacina acharPorId(long id) {
+		return vacinaRepository.findById(id).get();
+	}
+
 	public Vacina salvar(Vacina vacina) {
 		return vacinaRepository.save(vacina);
 	}
