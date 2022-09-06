@@ -23,6 +23,10 @@ public class LembreteVacinacaoService {
 		return lembreteVacinacaoRepository.findById(id).get();
 	}
 
+	public LembreteVacinacao acharPorClienteId(long clienteId) {
+		return lembreteVacinacaoRepository.findByCliente_Id(clienteId);
+	}
+
 	public LembreteVacinacao acharPorClienteENomeDoenca(long clienteId, long doencaId) {
 		return lembreteVacinacaoRepository.findByCliente_IdAndDoenca_Id(clienteId, doencaId);
 	}

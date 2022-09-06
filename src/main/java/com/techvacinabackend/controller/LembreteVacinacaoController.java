@@ -52,6 +52,11 @@ public class LembreteVacinacaoController {
 		return new ResponseEntity<>(lembreteVacinacaoService.acharPorId(id), HttpStatus.OK);
 	}
 
+	@GetMapping("/cliente/{id}")
+	public ResponseEntity<LembreteVacinacao> retornarTodosLembretesDeCliente(@PathVariable long id) {
+		return new ResponseEntity<>(lembreteVacinacaoService.acharPorClienteId(id), HttpStatus.OK);
+	}
+
 	@GetMapping("/cliente/doenca")
 	public ResponseEntity<LembreteVacinacao> retornarLembrete(@RequestBody LembreteDTO lembreteDTO) {
 		Long doencaId = doencaService.acharPorNome(lembreteDTO.doencaNome).getId();
