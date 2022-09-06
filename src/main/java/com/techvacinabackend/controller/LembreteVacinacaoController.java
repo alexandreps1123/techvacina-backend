@@ -56,6 +56,12 @@ public class LembreteVacinacaoController {
 	}
 
 	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping("/cliente/{id}")
+	public ResponseEntity<List<LembreteVacinacao>> retornarTodosLembretesDeCliente(@PathVariable long id) {
+		return new ResponseEntity<>(lembreteVacinacaoService.acharPorClienteId(id), HttpStatus.OK);
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/cliente/doenca")
 	public ResponseEntity<LembreteVacinacao> retornarLembrete(@RequestBody LembreteDTO lembreteDTO) {
 		Long doencaId = doencaService.acharPorNome(lembreteDTO.doencaNome).getId();
