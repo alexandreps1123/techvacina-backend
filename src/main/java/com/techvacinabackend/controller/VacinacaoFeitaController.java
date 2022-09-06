@@ -61,16 +61,19 @@ public class VacinacaoFeitaController {
 		this.vacinacaoFeitaService = vacinacaoFeitaService;
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("all")
 	public ResponseEntity<List<VacinacaoFeita>> listarTodos() {
 		return new ResponseEntity<>(vacinacaoFeitaService.listarTodos(), HttpStatus.OK);
 	}
 
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("cliente/{id}")
 	public ResponseEntity<List<VacinacaoFeita>> listarVacinacaoesFeitasPorCliente(@PathVariable long id) {
 		return new ResponseEntity<>(vacinacaoFeitaService.acharPorCliente(id), HttpStatus.OK);
 	}
 
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping()
 	public ResponseEntity<VacinacaoFeita> salvar(@RequestBody VacinacaoFeitaDTO vacinacaoFDto) {
 
