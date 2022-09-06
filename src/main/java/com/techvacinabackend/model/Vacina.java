@@ -27,7 +27,7 @@ public class Vacina {
     @Getter @Setter private long intervaloEntreDoses; // em dias
 
     @Column(nullable = false)
-    @Getter @Setter private long tempoDeEficacia; // em dias?
+    @Getter @Setter private long tempoDeEficacia; // em dias
     
     @ManyToOne(optional = false)
     @Getter @Setter private Doenca doenca;

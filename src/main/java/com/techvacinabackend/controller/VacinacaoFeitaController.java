@@ -66,7 +66,7 @@ public class VacinacaoFeitaController {
 		return new ResponseEntity<>(vacinacaoFeitaService.listarTodos(), HttpStatus.OK);
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("cliente/{id}")
 	public ResponseEntity<List<VacinacaoFeita>> listarVacinacaoesFeitasPorCliente(@PathVariable long id) {
 		return new ResponseEntity<>(vacinacaoFeitaService.acharPorCliente(id), HttpStatus.OK);
 	}

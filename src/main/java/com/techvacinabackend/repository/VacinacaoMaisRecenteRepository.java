@@ -8,5 +8,6 @@ import com.techvacinabackend.model.VacinacaoMaisRecente;
 @Repository
 public interface VacinacaoMaisRecenteRepository extends JpaRepository<VacinacaoMaisRecente, Long> {
     VacinacaoMaisRecente findByCliente_IdAndDoenca_Nome(Long clienteId, String doencaNome);
+    VacinacaoMaisRecente findByCliente_IdAndDoenca_Id(Long clienteId, Long doencaId);
     List<VacinacaoMaisRecente> findAllByCliente_Id(long id);
 }
