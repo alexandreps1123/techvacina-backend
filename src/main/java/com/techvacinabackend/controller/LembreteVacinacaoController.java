@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.techvacinabackend.model.LembreteVacinacao;
 import com.techvacinabackend.service.ClienteService;
@@ -50,6 +51,12 @@ public class LembreteVacinacaoController {
 	@GetMapping("/{id}")
 	public ResponseEntity<LembreteVacinacao> retornarLembrete(@PathVariable long id) {
 		return new ResponseEntity<>(lembreteVacinacaoService.acharPorId(id), HttpStatus.OK);
+	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping("/cliente/{id}")
+	public ResponseEntity<List<LembreteVacinacao>> retornarTodosLembretesDeCliente(@PathVariable long id) {
+		return new ResponseEntity<>(lembreteVacinacaoService.acharPorClienteId(id), HttpStatus.OK);
 	}
 
 	@GetMapping("/cliente/doenca")
