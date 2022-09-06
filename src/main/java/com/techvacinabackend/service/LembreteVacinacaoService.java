@@ -23,8 +23,8 @@ public class LembreteVacinacaoService {
 		return lembreteVacinacaoRepository.findById(id).get();
 	}
 
-	public LembreteVacinacao acharPorClienteId(long clienteId) {
-		return lembreteVacinacaoRepository.findByCliente_Id(clienteId);
+	public List<LembreteVacinacao> acharPorClienteId(long clienteId) {
+		return lembreteVacinacaoRepository.findAllByCliente_Id(clienteId);
 	}
 
 	public LembreteVacinacao acharPorClienteENomeDoenca(long clienteId, long doencaId) {
@@ -38,7 +38,5 @@ public class LembreteVacinacaoService {
 	public void deletar(LembreteVacinacao lembrete) {
 		lembreteVacinacaoRepository.deleteById(lembrete.getId());
 	}
-
-
 
 }
