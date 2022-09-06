@@ -5,30 +5,31 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PathVariable;
 
-import com.techvacinabackend.model.VacinacaoFeita;
+import com.techvacinabackend.dto.VacinacaoFeitaDTO;
 import com.techvacinabackend.model.Cliente;
 import com.techvacinabackend.model.Doenca;
 import com.techvacinabackend.model.LoteVacina;
-import com.techvacinabackend.model.Vacina;
-import com.techvacinabackend.model.VacinacaoPendente;
-import com.techvacinabackend.model.VacinacaoMaisRecente;
 import com.techvacinabackend.model.PostoDeSaude;
+import com.techvacinabackend.model.Vacina;
+import com.techvacinabackend.model.VacinacaoFeita;
+import com.techvacinabackend.model.VacinacaoMaisRecente;
+import com.techvacinabackend.model.VacinacaoPendente;
 import com.techvacinabackend.service.ClienteService;
 import com.techvacinabackend.service.DoencaService;
-import com.techvacinabackend.service.VacinaService;
 import com.techvacinabackend.service.LoteVacinaService;
+import com.techvacinabackend.service.PostoDeSaudeService;
+import com.techvacinabackend.service.VacinaService;
 import com.techvacinabackend.service.VacinacaoFeitaService;
 import com.techvacinabackend.service.VacinacaoMaisRecenteService;
 import com.techvacinabackend.service.VacinacaoPendenteService;
-import com.techvacinabackend.service.PostoDeSaudeService;
-import com.techvacinabackend.dto.VacinacaoFeitaDTO;
 
 @RestController
 @RequestMapping("/v1/api/vacinacaofeita")
